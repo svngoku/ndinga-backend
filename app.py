@@ -16,6 +16,8 @@ client = MongoClient("mongodb://localhost:27017/")
 ndinga_database = client["NDINGA"]
 kg_fr_collection = ndinga_database["ki_fr"]
 
+api_uri = "/api/v1/kg_fr"
+
 @app.route('/')
 def index():
     return render_template('base.html', title='Home')
@@ -24,12 +26,15 @@ def index():
 def dashboard():
     return render_template('home.html', title='Dashboard')
 
-@app.route('/api/v1/kg_fr/all', methods=['GET'])
+@app.route(api_uri+'/all', methods=['GET'])
 def getAll():
     output = []
     for translation in kg_fr_collection.find():
         output.append({'kg': translation['ki'], 'fr': translation['fr']})
     return jsonify({"datas": output})
+
+@app.route('api/v1/kg_fr')
+def add_translation()
 
 if __name__ == '__main__':
     # Main entry point when run in stand-alone mode.
