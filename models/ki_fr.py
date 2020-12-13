@@ -2,8 +2,8 @@
 from mongoengine import Document, StringField, FloatField
 
 class KgFr(Document):
-    kg = StringField(required=True)
-    fr = StringField(required=True)
+    kg = StringField(required=True, unique=True)
+    fr = StringField(required=True, unique=True)
 
     def encode_to_json(self):
         return {

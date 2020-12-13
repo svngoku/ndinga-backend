@@ -1,29 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NDINGA</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body>
-   <div class="container mx-auto">
-        <h1 class="flex-auto text-xl font-semibold">Back end application</h1>
-        <p class="text-sm font-medium text-gray-900">A prototype API for ndinga african languages plateform</p>
-        <form action="">
-            <div>
-                <label class="text-gray-700" for="kongo">Kongo</label>
-                <input class="form-input mt-1 block w-full" type="text" name="kg" id="kongo">
-                <br>
-                <label class="text-gray-700" for="french">French</label>
-                <input  class="form-input mt-1 block w-full" type="text" name="fr" id="french">
-
-                <br>
-
-                <button class="w-1/2 flex items-center justify-center bg-black text-white" type="submit">Ajout</button>
-            </div>
-        </form>
-   </div>
-    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum incidunt quae minima? Aut, voluptate odit iure blanditiis corporis, expedita saepe doloremque exercitationem itaque culpa modi atque earum explicabo sit voluptatibus?</p> -->
-</body>
-</html>
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container">
+        <h1 class="mt-5">Hello NDINGA</h1>
+    </div>
+{% endblock %}
